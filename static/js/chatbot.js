@@ -5,6 +5,7 @@ class Chatbot {
         this.sendbtn = document.querySelector('#send');
         this.voicebtn = document.querySelector('#voice');
         this.usersend = true;
+        this.delaytime = 6000;
         this.recordingstatus = false;
         this.display = document.querySelector('#display');
         this.togglebtn = document.querySelector('#toggle-btn');
@@ -68,7 +69,7 @@ class Chatbot {
             setTimeout(function() {
                 window.location.href =data['redirect_url'];
 
-            }, 5000);
+            }, this.delaytime);
         }
         // redirect if condition\/
 
@@ -148,7 +149,7 @@ class Chatbot {
                     setTimeout(function() {
                         window.location.href =data['redirect_url'];
         
-                    }, 5000);
+                    }, this.delaytime);
                 }
             } else {
                 console.error('Upload failed:', response.statusText);
